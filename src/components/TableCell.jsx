@@ -1,15 +1,15 @@
 import React from 'react'
 
-class TableCell extends React.Component {
-    render() {
-
+function TableCell(props) {
+    if (props.colorAll) {
+        
+        return <td style={{backgroundColor: 'pink'}} onClick={props.changeColor}></td>
+    } else {
         return (
-            <td
-                onClick={this.props.changeColor}
-            >
-            </td>
+            <td onClick={props.changeColor}></td>
         )
     }
+
 }
 
 export default TableCell
