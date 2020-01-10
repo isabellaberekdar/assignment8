@@ -1,8 +1,12 @@
 import React from 'react';
 
 function TableCell(props) {
+/*     const changeColor = () => {
+        this.style.backgroundColor = 'blue'
+    } */
+    
     return (
-        <td>cell</td>
+        <td onClick={changeColor}>cell</td>
     )
 }
 

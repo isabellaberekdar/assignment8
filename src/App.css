@@ -1,5 +1,19 @@
+td {
+  background-color: pink;
+  border: 1px solid black;
+  margin: 0px;
+} 
+
+
+
+button {
+  margin-bottom: 30px;
+}
 .App {
-  text-align: center;
+  /* text-align: center; */
+/*   display: flex;
+  justify-content: center;
+  flex-direction: column; */
 }
 
 .App-logo {

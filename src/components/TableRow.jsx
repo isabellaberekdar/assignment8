@@ -5,7 +5,7 @@ import TableCell from './TableCell'
 function TableRow(props) {
     let cells = []
     for(let i=0; i < props.cols; i++) {
-        cells.push(<TableCell />)
+        cells.push(<TableCell changeColor={props.changeColor}/*  color={props.color} */ />)
     }
     return (
         <tr>
