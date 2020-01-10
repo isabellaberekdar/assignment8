@@ -8,7 +8,8 @@ class App extends React.Component {
       this.state = {
         rows: 4,
         cols: 5,
-        color: 'blue'
+        color: 'blue',
+        colorAll: false
       }
     }
     
@@ -25,6 +26,7 @@ class App extends React.Component {
         this.setState({cols: this.state.cols - 1})
       }
     }
+
     removeRow = () => {
       if (this.state.rows > 0) {
         this.setState({rows: this.state.rows - 1})
@@ -32,21 +34,28 @@ class App extends React.Component {
     }
 
     changeCellColor = e => {
-      e.target.style.backgroundColor = this.state.color
+      const event = e.target
+      this.setState({colorAll: false}, () => {        
+        event.style.backgroundColor = this.state.color
+      })
     }
 
     changeColor = e => {
       this.setState({color: e.target.value})
     }
 
+    clear = e => {
+      this.setState({colorAll: true})
+    }
+
     render() {
         return (
             <div className='App'>
-              <select name="color" onChange={this.changeColor}>
-                <option value={'blue'}>Blue</option>
-                <option value="cyan">Cyan</option>
-                <option value={'turquoise'}>Turquoise</option>
-                <option value={'pink'}>Pink</option>
+              <select name='color' onChange={this.changeColor}>
+                <option value='blue'>Blue</option>
+                <option value='cyan'>Cyan</option>
+                <option value='turquoise'>Turquoise</option>
+                <option value='pink'>Pink</option>
               </select>
               <button onClick={this.addCol}>Add col</button>
               <button onClick={this.addRow}>Add Row</button>
@@ -55,9 +64,13 @@ class App extends React.Component {
               <Table 
                 rows={this.state.rows} 
                 cols={this.state.cols} 
-                color={this.state.color}
                 changeColor={this.changeCellColor}
+                color={this.state.color}
+                colorAll={this.state.colorAll}
               />
+              <button onClick={this.clear}>Clear Cells</button>
+              <button onClick={this.clear}>Color All</button>
+
             </div>
         )
     }

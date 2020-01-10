@@ -6,9 +6,10 @@ function Table(props) {
     for(let i=0; i < props.rows; i++) {
         rows.push(
             <TableRow 
-                cols={props.cols} 
-                changeColor={props.changeColor} 
                 color={props.color}
+                colorAll={props.colorAll}
+                cols={props.cols} 
+                changeColor={props.changeColor}
             />
         )
     }

@@ -7,8 +7,10 @@ function TableRow(props) {
     for(let i=0; i < props.cols; i++) {
         cells.push(
             <TableCell 
-                changeColor={props.changeColor}  
                 color={props.color}
+                colorAll={props.colorAll}
+                changeColor={props.changeColor} 
+                 
             />)
     }
     return (
