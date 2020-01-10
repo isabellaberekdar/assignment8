@@ -8,11 +8,10 @@ function Table(props) {
             <TableRow 
                 cols={props.cols} 
                 changeColor={props.changeColor} 
-                /* color={props.color}  */
+                color={props.color}
             />
         )
     }
-    
     return (
         <div>
             <table>

@@ -8,7 +8,7 @@ class App extends React.Component {
       this.state = {
         rows: 4,
         cols: 5,
-        color: 'gray'
+        color: 'blue'
       }
     }
     
@@ -31,31 +31,32 @@ class App extends React.Component {
       }
     }
 
-    changeCellColor = newColor => {
-      
+    changeCellColor = e => {
+      e.target.style.backgroundColor = this.state.color
     }
 
-    changeColor = newColor => {
-      this.setState({color: newColor})
+    changeColor = e => {
+      this.setState({color: e.target.value})
     }
 
     render() {
         return (
             <div className='App'>
-              <select >
-                <option value="blue">Blue</option>
+              <select name="color" onChange={this.changeColor}>
+                <option value={'blue'}>Blue</option>
                 <option value="cyan">Cyan</option>
-                <option value="turquoise">turquoise</option>
+                <option value={'turquoise'}>Turquoise</option>
+                <option value={'pink'}>Pink</option>
               </select>
-              <button onClick={this.addCol}>add col</button>
-              <button onClick={this.addRow}>add Row</button>
-              <button onClick={this.removeCol}>remove col</button>
-              <button onClick={this.removeRow}>remove Row</button>
+              <button onClick={this.addCol}>Add col</button>
+              <button onClick={this.addRow}>Add Row</button>
+              <button onClick={this.removeCol}>Remove col</button>
+              <button onClick={this.removeRow}>Remove Row</button>
               <Table 
                 rows={this.state.rows} 
                 cols={this.state.cols} 
-                /* color={this.state.color}  */
-                changeColor={this.changeCellColor(this.state.color)}
+                color={this.state.color}
+                changeColor={this.changeCellColor}
               />
             </div>
         )
