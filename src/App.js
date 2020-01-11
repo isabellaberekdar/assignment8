@@ -57,9 +57,9 @@ class App extends React.Component {
                 <option value='turquoise'>Turquoise</option>
                 <option value='pink'>Pink</option>
               </select>
-              <button onClick={this.addCol}>Add col</button>
+              <button onClick={this.addCol}>Add Column</button>
               <button onClick={this.addRow}>Add Row</button>
-              <button onClick={this.removeCol}>Remove col</button>
+              <button onClick={this.removeCol}>Remove Col</button>
               <button onClick={this.removeRow}>Remove Row</button>
               <Table 
                 rows={this.state.rows} 
